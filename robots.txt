@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nghuodoo.github.io/sitemap.xml

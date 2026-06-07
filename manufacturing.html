@@ -49,6 +49,26 @@
       .service-types-grid { grid-template-columns: 1fr; }
     }
   </style>
+<style>
+[data-lang="vi"]{display:none!important}
+body.vi [data-lang="en"]{display:none!important}
+body.vi [data-lang="vi"]{display:revert!important}
+.vi-only{display:none!important}
+body.vi .en-only{display:none!important}
+body.vi .vi-only{display:revert!important}
+</style>
+<script>
+(function(){
+  var l=localStorage.getItem('nth_lang')||'en';
+  if(l==='vi') document.body.classList.add('vi');
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.textContent=l==='vi'?'EN':'VI';});
+})();
+function toggleLang(){
+  var v=document.body.classList.toggle('vi');
+  localStorage.setItem('nth_lang',v?'vi':'en');
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.textContent=v?'EN':'VI';});
+}
+</script>
 </head>
 <body>
 

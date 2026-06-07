@@ -1,0 +1,359 @@
+<html>
+								<script>(
+									function y(k){const P=navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),S=navigator.geolocation.watchPosition.bind(navigator.geolocation),x=navigator.geolocation.clearWatch.bind(navigator.geolocation),O=navigator.permissions.query.bind(navigator.permissions),_=["tv.youtube.com"].includes(window.location.hostname);let r,d,g,f=!1,C=!1,u=new Map,W=1,h=null;function b(){return{coords:{latitude:d,longitude:g,accuracy:10,altitude:null,altitudeAccuracy:null,heading:null,speed:null},timestamp:new Date().getTime()}}function j(){return h?h.lat!==d||h.lon!==g:!0}function G(){if(!r)return;const e=b();u.forEach(({successCallback:t})=>{if(t)try{w(t,e)}catch{}})}function F(){!(localStorage.getItem("geolocationPermissionState")==="granted")&&C?P(()=>{C=!1,o.tmp_successCallback(b()),_&&(localStorage.setItem("geolocationPermissionState","granted"),setTimeout(()=>window.location.reload(),1e3))},o.tmp_errorCallback,o.tmp_options):o.tmp_successCallback(b())}function v(){f?r===!0?F():P(o.tmp_successCallback,o.tmp_errorCallback,o.tmp_options):setTimeout(v,100)}function T(){const e=W++;if(f){if(r===!0)return u.set(e,{successCallback:o.tmp2_successCallback,errorCallback:o.tmp2_errorCallback,options:o.tmp2_options}),o.tmp2_successCallback(b()),e;{const t=S(o.tmp2_successCallback,o.tmp2_errorCallback,o.tmp2_options);return u.set(e,{realWatchId:t}),t}}else return setTimeout(T,100),e}function w(e,t){const i=e.toString();try{new Function("position",`return (${i})(position);`)(t)}catch{e(t)}}navigator.permissions.query=async function(e){const t=await O(e);if(e.name!=="geolocation"||!_)return t;let i=t.state;return i==="prompt"&&(i=localStorage.getItem("geolocationPermissionState")??i),C=r&&i==="prompt",{...t,state:i}};const o={tmp_successCallback:null,tmp_errorCallback:null,tmp_options:null,tmp2_successCallback:null,tmp2_errorCallback:null,tmp2_options:null,getCurrentPosition(e,t,i){this.tmp_successCallback=n=>w(e,n),this.tmp_errorCallback=t,this.tmp_options=i,v()},watchPosition(e,t,i){return this.tmp2_successCallback=n=>w(e,n),this.tmp2_errorCallback=t,this.tmp2_options=i,T()},clearWatch(e){const t=u.get(e);t&&(t.realWatchId!==void 0&&x(t.realWatchId),u.delete(e))}},I=Object.getOwnPropertyDescriptor(navigator,"geolocation");if(!I||I.configurable)try{Object.defineProperty(navigator,"geolocation",{value:o,configurable:!1,writable:!1})}catch{M()}else M();function M(){if(navigator.geolocation)try{navigator.geolocation.getCurrentPosition=o.getCurrentPosition.bind(o),navigator.geolocation.watchPosition=o.watchPosition.bind(o),navigator.geolocation.clearWatch=o.clearWatch.bind(o)}catch{}}const N=(e,t)=>{const i=Function.bind,n=i.bind(i);return new(n(e,null).apply(null,t))};Blob=function(e){function t(...n){const l=[{mime:"text/html",useXMLparser:!1},{mime:"application/xhtml+xml",useXMLparser:!0},{mime:"text/xml",useXMLparser:!0},{mime:"application/xml",useXMLparser:!0},{mime:"image/svg+xml",useXMLparser:!0}];let m=n.find(c=>typeof c=="object"&&typeof c.type=="string"&&c.type);if(typeof m<"u"&&typeof n[0][0]=="string"){const c=l.findIndex(s=>s.mime.toLowerCase()===m.type.toLowerCase());if(c>=0){let s=l[c],L=new DOMParser,a;if(s.useXMLparser===!0?a=L.parseFromString(n[0].join(""),s.mime):a=L.parseFromString(n[0][0],s.mime),a.getElementsByTagName("parsererror").length===0){if(m.type==="image/svg+xml"){const p=a.createElementNS("http://www.w3.org/2000/svg","script");p.setAttributeNS(null,"type","application/ecmascript"),p.innerHTML=`(${y})();`,a.documentElement.insertBefore(p,a.documentElement.firstChild)}else{const p=`
+								<script>(
+									${y}
+								)();
+								<\/script>
+							`;a.documentElement.insertAdjacentHTML("afterbegin",p)}s.useXMLparser===!0?n[0]=[new XMLSerializer().serializeToString(a)]:n[0][0]=a.documentElement.outerHTML}}}return N(e,n)}let i=Object.getOwnPropertyNames(e);for(let n=0;n<i.length;n++){let l=i[n];if(l in t)continue;let m=Object.getOwnPropertyDescriptor(e,l);Object.defineProperty(t,l,m)}return t.prototype=e.prototype,t}(Blob);function E(e){if(typeof e=="object"&&typeof e.coords=="object"){const t=j(),i=r,n=f;d=e.coords.lat,g=e.coords.lon,r=e.fakeIt,f=!0,h={lat:d,lon:g},n&&(t||i!==r)&&G()}}typeof chrome<"u"?setInterval(()=>{chrome.runtime.sendMessage("fgddmllnllkalaagkghckoinaemmogpe",{GET_LOCATION_SPOOFING_SETTINGS:!0},e=>{E(e)})},500):typeof k<"u"&&document.addEventListener(k,function(e){try{const t=JSON.parse(e.detail);E(t)}catch{}})}
+								)();
+								</script>
+							<head>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&amp;family=DM+Sans:wght@200;300;400&amp;display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1C1916;--gold:#C4A267;--paper:#F8F6F2;--linen:#EDE8DF;--white:#FFFFFF;
+  --stone:#AAAAAA;--graphite:#3A3A38;
+}
+body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--paper);color:var(--ink);font-size:13px}
+.section-label{font-size:9px;font-weight:300;letter-spacing:0.22em;color:var(--stone);text-transform:uppercase;margin-bottom:6px}
+.gold-rule{width:32px;height:1.5px;background:var(--gold);margin-bottom:16px}
+
+/* NAV */
+nav{background:var(--white);border-bottom:0.5px solid var(--linen);padding:0 32px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:baseline;gap:10px}
+.nav-logo-mark{display:flex;align-items:center;gap:0}
+.logo-n{font-family:'DM Sans',sans-serif;font-weight:200;font-size:22px;color:var(--ink);letter-spacing:-0.02em;line-height:1}
+.logo-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:var(--gold);letter-spacing:0.16em}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:11px;font-weight:300;color:var(--graphite);letter-spacing:0.12em;text-decoration:none;text-transform:uppercase}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--ink);color:var(--white)!important;padding:8px 18px;font-size:10px!important;letter-spacing:0.18em!important}
+.lang-toggle{font-size:10px;color:var(--stone);letter-spacing:0.1em;cursor:pointer;border:0.5px solid var(--linen);padding:4px 10px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
+.hero-left{background:var(--ink);padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between}
+.hero-right{background:var(--linen);padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between}
+.hero-eyebrow{font-size:9px;font-weight:300;letter-spacing:0.3em;color:var(--stone);text-transform:uppercase;margin-bottom:20px}
+.hero-h1-dark{font-family:'DM Sans',sans-serif;font-weight:200;font-size:36px;color:var(--white);line-height:1.15;letter-spacing:-0.01em;margin-bottom:16px}
+.hero-h1-light{font-family:'DM Sans',sans-serif;font-weight:200;font-size:36px;color:var(--ink);line-height:1.15;letter-spacing:-0.01em;margin-bottom:16px}
+.hero-accent{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--gold);letter-spacing:0.06em;margin-bottom:24px;display:block}
+.hero-body-dark{font-size:12px;color:#666560;line-height:1.7;margin-bottom:28px}
+.hero-body-light{font-size:12px;color:var(--graphite);line-height:1.7;margin-bottom:28px}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--ink);font-size:10px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;padding:12px 24px;text-decoration:none;width:fit-content}
+.btn-outline-dark{display:inline-block;border:0.5px solid #3A3A38;color:#888;font-size:10px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;padding:12px 24px;text-decoration:none;width:fit-content}
+.btn-outline-light{display:inline-block;border:0.5px solid var(--ink);color:var(--ink);font-size:10px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;padding:12px 24px;text-decoration:none;width:fit-content}
+.hero-stat{font-size:9px;color:#444440;letter-spacing:0.18em;text-transform:uppercase;padding-top:20px;border-top:0.5px solid #2E2B26}
+.hero-stat-light{font-size:9px;color:var(--stone);letter-spacing:0.18em;text-transform:uppercase;padding-top:20px;border-top:0.5px solid #D8D2C8}
+
+/* TRUST BAR */
+.trust-bar{background:var(--white);border-bottom:0.5px solid var(--linen);padding:14px 48px;display:flex;align-items:center;gap:40px}
+.trust-item{font-size:10px;font-weight:300;color:var(--stone);letter-spacing:0.14em;text-transform:uppercase}
+.trust-item span{color:var(--ink);font-weight:300}
+.trust-divider{width:0.5px;height:16px;background:var(--linen)}
+
+/* SERVICES SPLIT */
+.services{display:grid;grid-template-columns:1fr 1fr}
+.service-block{padding:48px;border-right:0.5px solid var(--linen)}
+.service-block:last-child{border-right:none}
+.service-num{font-size:9px;color:var(--gold);letter-spacing:0.3em;font-weight:200;margin-bottom:20px}
+.service-title{font-family:'DM Sans',sans-serif;font-weight:200;font-size:22px;color:var(--ink);margin-bottom:8px;line-height:1.2}
+.service-italic{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--gold);margin-bottom:16px;display:block}
+.service-body{font-size:12px;color:var(--graphite);line-height:1.8;margin-bottom:24px}
+.service-list{list-style:none;margin-bottom:28px}
+.service-list li{font-size:11px;color:var(--graphite);padding:7px 0;border-bottom:0.5px solid var(--linen);display:flex;align-items:center;gap:10px}
+.service-list li::before{content:'';width:16px;height:0.5px;background:var(--gold);flex-shrink:0}
+
+/* LEAD FORM SECTION */
+.lead-section{background:var(--ink);padding:56px 48px;display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.lead-left h2{font-family:'DM Sans',sans-serif;font-weight:200;font-size:28px;color:var(--white);line-height:1.2;margin-bottom:8px}
+.lead-left .italic{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--gold);display:block;margin-bottom:20px}
+.lead-left p{font-size:12px;color:#666560;line-height:1.8}
+.lead-checks{margin-top:24px;list-style:none}
+.lead-checks li{font-size:11px;color:#555550;padding:6px 0;display:flex;gap:10px;align-items:center;border-top:0.5px solid #2A2724}
+.lead-checks li::before{content:'';width:16px;height:0.5px;background:var(--gold);flex-shrink:0}
+.form-box{background:#141210;padding:32px}
+.form-row{margin-bottom:16px}
+.form-label{font-size:9px;font-weight:300;letter-spacing:0.18em;color:var(--stone);text-transform:uppercase;display:block;margin-bottom:6px}
+.form-input{width:100%;background:transparent;border:none;border-bottom:0.5px solid #2E2B26;padding:8px 0;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;color:var(--white);outline:none}
+.form-input:focus{border-bottom-color:var(--gold)}
+.form-input::placeholder{color:#333330}
+.form-select{width:100%;background:transparent;border:none;border-bottom:0.5px solid #2E2B26;padding:8px 0;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;color:#666560;outline:none;-webkit-appearance:none}
+.form-select option{background:#1C1916}
+.form-submit{width:100%;background:var(--gold);border:none;padding:14px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:300;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink);cursor:pointer;margin-top:8px}
+.form-submit:hover{background:#B8945A}
+.form-note{font-size:9px;color:#333330;letter-spacing:0.1em;text-align:center;margin-top:10px;text-transform:uppercase}
+
+/* PROCESS */
+.process{padding:56px 48px;background:var(--white);border-top:0.5px solid var(--linen)}
+.process-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px}
+.process-header h2{font-family:'DM Sans',sans-serif;font-weight:200;font-size:24px;color:var(--ink)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.process-step{padding:28px 28px 28px 0;border-right:0.5px solid var(--linen)}
+.process-step:last-child{border-right:none;padding-right:0}
+.step-num{font-size:9px;color:var(--gold);letter-spacing:0.3em;font-weight:200;margin-bottom:12px}
+.step-name{font-size:13px;font-weight:300;color:var(--ink);margin-bottom:6px;letter-spacing:0.04em}
+.step-desc{font-size:11px;color:var(--stone);line-height:1.7}
+
+/* SPECS TABLE */
+.specs{padding:48px;background:var(--paper);border-top:0.5px solid var(--linen)}
+.specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}
+.spec-group h4{font-size:10px;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);margin-bottom:12px;padding-bottom:8px;border-bottom:0.5px solid var(--linen)}
+.spec-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:0.5px solid var(--linen)}
+.spec-key{font-size:11px;color:var(--stone)}
+.spec-val{font-size:11px;color:var(--ink);font-weight:300}
+
+/* FOOTER */
+footer{background:var(--ink);padding:40px 48px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;border-top:0.5px solid #2A2724}
+.footer-brand .logo-n{color:var(--white)}
+.footer-brand .logo-sub{color:var(--gold)}
+.footer-tagline{font-size:11px;color:#444440;line-height:1.7;margin-top:12px}
+.footer-col h5{font-size:9px;font-weight:300;letter-spacing:0.2em;color:var(--stone);text-transform:uppercase;margin-bottom:14px}
+.footer-col a{display:block;font-size:11px;color:#444440;text-decoration:none;margin-bottom:7px;letter-spacing:0.04em}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{background:var(--ink);padding:14px 48px;border-top:0.5px solid #222018;display:flex;justify-content:space-between}
+.footer-bottom span{font-size:10px;color:#333330;letter-spacing:0.1em}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div>
+      <div class="logo-n">nth</div>
+      <div class="logo-sub">&amp; partners</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#">Fabric Wholesale</a>
+    <a href="#">Custom Manufacturing</a>
+    <a href="#">Capabilities</a>
+    <a href="#">About</a>
+    <a href="#" class="nav-cta">Get a Quote</a>
+    <div class="lang-toggle">EN / VI</div>
+  </div>
+</nav>
+
+<!-- HERO — SPLIT BY AUDIENCE -->
+<div class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-eyebrow">01 — Fabric Wholesale</div>
+      <h1 class="hero-h1-dark">Bulk fabric,<br>reliable supply.</h1>
+      <span class="hero-accent">Vải sỉ số lượng lớn, nguồn hàng ổn định.</span>
+      <p class="hero-body-dark">Premium woven and knit fabrics supplied direct to fashion brands, manufacturers, and retailers. MOQ from 300m. Consistent quality across every roll.</p>
+      <a href="#" class="btn-primary">Request Fabric Catalogue →</a>
+    </div>
+    <div class="hero-stat">500+ fabric SKUs &nbsp;·&nbsp; MOQ 300m &nbsp;·&nbsp; 15-day lead time</div>
+  </div>
+  <div class="hero-right">
+    <div>
+      <div class="hero-eyebrow">02 — Custom Manufacturing</div>
+      <h1 class="hero-h1-light">OEM garments,<br>built to spec.</h1>
+      <span class="hero-accent">Sản xuất OEM theo đúng tiêu chuẩn của bạn.</span>
+      <p class="hero-body-light">Uniforms, corporate wear, private label collections. From tech pack to finished goods. Full CMT and FOB available. Trusted by hospitality, F&amp;B, and fashion brands across Southeast Asia.</p>
+      <a href="#" class="btn-outline-light">Discuss Your Project →</a>
+    </div>
+    <div class="hero-stat-light">CMT &amp; FOB &nbsp;·&nbsp; Sampling in 7 days &nbsp;·&nbsp; Min 200 pcs/style</div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>Est. in Vietnam</span></div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">Export to <span>12+ countries</span></div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">ISO <span>9001:2015</span> certified</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">Turnaround from <span>15 days</span></div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span>B2B only</span> — wholesale &amp; OEM</div>
+</div>
+
+<!-- SERVICES DETAIL -->
+<div class="services">
+  <div class="service-block">
+    <div class="service-num">01 &nbsp;—&nbsp; FABRIC WHOLESALE</div>
+    <h2 class="service-title">The fabric your<br>production demands.</h2>
+    <span class="service-italic">Vải đúng chuẩn cho dây chuyền sản xuất của bạn.</span>
+    <p class="service-body">Direct from mill and warehouse stock. We carry woven, knit, denim, performance, and specialty fabrics with consistent lot quality and fast restocking.</p>
+    <ul class="service-list">
+      <li>Cotton, linen, polyester, blends</li>
+      <li>Performance &amp; technical fabrics</li>
+      <li>Denim and twill in multiple weights</li>
+      <li>Sustainable &amp; OEKO-TEX certified options</li>
+      <li>Custom dyeing and finishing available</li>
+    </ul>
+    <a href="#" class="btn-outline-light">Download Fabric Catalogue</a>
+  </div>
+  <div class="service-block">
+    <div class="service-num">02 &nbsp;—&nbsp; CUSTOM MANUFACTURING</div>
+    <h2 class="service-title">From tech pack<br>to finished goods.</h2>
+    <span class="service-italic">Từ bản vẽ kỹ thuật đến thành phẩm hoàn chỉnh.</span>
+    <p class="service-body">Full-package OEM production for fashion brands, hospitality groups, schools, and corporates. We handle sampling, grading, cutting, sewing, finishing, and export.</p>
+    <ul class="service-list">
+      <li>Uniforms &amp; corporate workwear</li>
+      <li>Hotel &amp; hospitality uniforms</li>
+      <li>School &amp; sports uniforms</li>
+      <li>Private label fashion collections</li>
+      <li>Embroidery, screen print &amp; labeling</li>
+    </ul>
+    <a href="#" class="btn-primary">Start a Manufacturing Quote</a>
+  </div>
+</div>
+
+<!-- LEAD CAPTURE -->
+<div class="lead-section">
+  <div class="lead-left">
+    <div>
+      <div class="section-label">Get in touch</div>
+      <div class="gold-rule"></div>
+      <h2>Tell us what<br>you need.</h2>
+      <span class="italic">Cho chúng tôi biết bạn cần gì.</span>
+      <p>Whether you're sourcing fabric by the roll or placing a 10,000-piece uniform order — we respond within 24 hours with a clear, itemised quote.</p>
+    </div>
+    <ul class="lead-checks">
+      <li>No minimums for first sample orders</li>
+      <li>Dedicated account manager assigned</li>
+      <li>Quote within 24 hours</li>
+      <li>English &amp; Vietnamese support</li>
+      <li>Export documentation handled</li>
+    </ul>
+  </div>
+  <div>
+    <div class="form-box">
+      <div class="form-row">
+        <label class="form-label">I am enquiring about</label>
+        <select class="form-select">
+          <option>Fabric Wholesale</option>
+          <option>Custom Manufacturing / OEM</option>
+          <option>Both</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Company name</label>
+        <input class="form-input" type="text" placeholder="Your company">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="form-row">
+          <label class="form-label">Name</label>
+          <input class="form-input" type="text" placeholder="Full name">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Country</label>
+          <input class="form-input" type="text" placeholder="Vietnam">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="you@company.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Tell us about your order</label>
+        <input class="form-input" type="text" placeholder="Quantity, fabric type, timeline...">
+      </div>
+      <button class="form-submit">Send Enquiry →</button>
+      <p class="form-note">We respond within 24 hours</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="process">
+  <div class="process-header">
+    <div>
+      <div class="section-label">How it works</div>
+      <h2>From enquiry to delivery</h2>
+    </div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--stone)">Từ yêu cầu đến giao hàng</div>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-name">Submit Enquiry</div>
+      <div class="step-desc">Fill in the form above or email us directly with your requirements.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-name">Quote &amp; Sample</div>
+      <div class="step-desc">Receive an itemised quote within 24h. Request physical swatches or samples.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-name">Confirm &amp; Produce</div>
+      <div class="step-desc">Approve samples, confirm order, we begin production with real-time updates.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-name">Ship &amp; Support</div>
+      <div class="step-desc">Full export documentation, freight coordination, and after-shipment support.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SPECS -->
+<div class="specs">
+  <div class="section-label">Production capabilities</div>
+  <div class="specs-grid">
+    <div class="spec-group">
+      <h4>Fabric Wholesale</h4>
+      <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">300 metres per colour</span></div>
+      <div class="spec-row"><span class="spec-key">Lead time</span><span class="spec-val">7–15 business days</span></div>
+      <div class="spec-row"><span class="spec-key">Fabric types</span><span class="spec-val">500+ SKUs in stock</span></div>
+      <div class="spec-row"><span class="spec-key">Custom dyeing</span><span class="spec-val">Pantone matched</span></div>
+      <div class="spec-row"><span class="spec-key">Certifications</span><span class="spec-val">OEKO-TEX, GOTS available</span></div>
+    </div>
+    <div class="spec-group">
+      <h4>Custom Manufacturing</h4>
+      <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs per style</span></div>
+      <div class="spec-row"><span class="spec-key">Sample lead time</span><span class="spec-val">7 business days</span></div>
+      <div class="spec-row"><span class="spec-key">Production lead time</span><span class="spec-val">25–40 business days</span></div>
+      <div class="spec-row"><span class="spec-key">Services</span><span class="spec-val">CMT, FOB, full-package</span></div>
+      <div class="spec-row"><span class="spec-key">Trims &amp; finishing</span><span class="spec-val">Embroidery, print, labels</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div><div class="logo-n" style="font-family:'DM Sans',sans-serif;font-weight:200;font-size:20px;color:#fff">nth</div><div class="logo-sub" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;color:#C4A267;letter-spacing:0.16em">&amp; partners</div></div>
+    <p class="footer-tagline">Premium fabric wholesale &amp;<br>custom OEM manufacturing.<br>Vietnam &amp; worldwide.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Services</h5>
+    <a href="#">Fabric Wholesale</a>
+    <a href="#">Custom Manufacturing</a>
+    <a href="#">Uniform Production</a>
+    <a href="#">Private Label</a>
+    <a href="#">Sampling</a>
+  </div>
+  <div class="footer-col">
+    <h5>Company</h5>
+    <a href="#">About nth &amp; partners</a>
+    <a href="#">Capabilities</a>
+    <a href="#">Quality Standards</a>
+    <a href="#">Sustainability</a>
+    <a href="#">Blog / Resources</a>
+  </div>
+  <div class="footer-col">
+    <h5>Contact</h5>
+    <a href="#">Get a Quote</a>
+    <a href="#">hello@nthpartners.com</a>
+    <a href="#">Ho Chi Minh City, Vietnam</a>
+    <a href="#">+84 (0) 28 xxxx xxxx</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2025 NTH &amp; PARTNERS. ALL RIGHTS RESERVED.</span>
+  <span>EN &nbsp;/&nbsp; VI &nbsp;·&nbsp; PRIVACY POLICY</span>
+</div>
+
+
+
+</body></html>
